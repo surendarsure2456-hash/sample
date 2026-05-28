@@ -216,4 +216,8 @@ app.get("/api/analytics/daily", async (req, res) => {
   } catch (e) { res.status(500).json({ success: false, message: e.message }); }
 });
 
-app.listen(5000, () => console.log("🚀 NKS Billing Server on port 5000"));
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`🚀 NKS Billing Server on port ${PORT}`);
+});
